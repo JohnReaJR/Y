@@ -343,7 +343,7 @@ PYTHON
 
 chmod +x /etc/Y/protocols/PDirect.py
 
-screen -dmS pydic-"$porta_socket" python ${SCPinst}/PDirect.py "$porta_socket" "$texto_soket" && echo ""$porta_socket" "$texto_soket"" >> /etc/VPS-AGN/PortPD.log
+screen -dmS pydic-"$porta_socket" python ${SCPinst}/PDirect.py "$porta_socket" "$texto_soket" && echo ""$porta_socket" "$texto_soket"" >> /etc/Y/PortPD.log
 }
 
 
@@ -368,8 +368,8 @@ pidproxy6=$(ps x | grep "scktcheck" | grep -v "grep" | awk -F "pts" '{print $1}'
 pidproxy7=$(ps x | grep "python.py" | grep -v "grep" | awk -F "pts" '{print $1}') && [[ ! -z $pidproxy7 ]] && pid_kill $pidproxy7
 echo -e "\033[1;91m  $(fun_trans  "Socks ARRESTED")"
 msg -bar
-rm -rf /etc/VPS-AGN/PortPD.log
-echo "" > /etc/VPS-AGN/PortPD.log
+rm -rf /etc/Y/PortPD.log
+echo "" > /etc/Y/PortPD.log
 exit 0
 }
 iniciarsocks () {
