@@ -2,7 +2,7 @@
 #25/01/2021 by @KhaledAGN
 clear
 clear
-SCPdir="/etc/VPS-AGN"
+SCPdir="/etc/Y"
 SCPfrm="${SCPdir}/tools" && [[ ! -d ${SCPfrm} ]] && exit
 SCPinst="${SCPdir}/protocols"&& [[ ! -d ${SCPinst} ]] && exit
 declare -A cor=( [0]="\033[1;37m" [1]="\033[1;34m" [2]="\033[1;31m" [3]="\033[1;33m" [4]="\033[1;32m" )
@@ -69,7 +69,7 @@ msg -bar
 echo -ne "\033[1;97mHeader response (200,101,404,500,etc): \033[1;92m" && read rescabeza
 msg -bar
 (
-less << PYTHON  > /etc/VPS-AGN/protocols/PDirect.py
+less << PYTHON  > /etc/Y/protocols/PDirect.py
 import socket, threading, thread, select, signal, sys, time, getopt
 
 # Listen
@@ -341,7 +341,7 @@ if __name__ == '__main__':
 PYTHON
 ) > $HOME/proxy.log
 
-chmod +x /etc/VPS-AGN/protocols/PDirect.py
+chmod +x /etc/Y/protocols/PDirect.py
 
 screen -dmS pydic-"$porta_socket" python ${SCPinst}/PDirect.py "$porta_socket" "$texto_soket" && echo ""$porta_socket" "$texto_soket"" >> /etc/VPS-AGN/PortPD.log
 }
